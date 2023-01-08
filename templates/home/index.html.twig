@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poses une question{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Poses une question à Max 🤖</h1>
+        {{ form_start(form) }}
+        {{ form_row(form.question) }}
+        {{ form_row(form.submit, {
+            label_html: true,
+            label: 'Send your request <img class="htmx-indicator" src="/asset/img/bars.svg"/>',
+            attr: {
+                class: 'btn btn-primary'
+            }
+        }) }}
+        {{ form_end(form) }}
+    </div>
+    <div id="response"></div>
+{% endblock %}
