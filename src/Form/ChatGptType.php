@@ -14,8 +14,9 @@ class ChatGptType extends AbstractType
     {
         $builder
             ->add('question', TextareaType::class, [
-                'label' => 'Your question',
+                'label' => false,
                 'attr' => [
+                    'class' => 'form-control',
                     'placeholder' => 'Ask to ChatGPT here...',
                     'rows' => 5,
                 ],

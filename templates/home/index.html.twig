@@ -3,18 +3,25 @@
 {% block title %}Poses une question{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <h1>Poses une question à Max 🤖</h1>
-        {{ form_start(form) }}
-        {{ form_row(form.question) }}
-        {{ form_row(form.submit, {
-            label_html: true,
-            label: 'Send your request <img class="htmx-indicator" src="/asset/img/bars.svg"/>',
-            attr: {
-                class: 'btn btn-primary'
-            }
-        }) }}
-        {{ form_end(form) }}
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="{{ asset('asset/img/wizard-face.svg') }}" alt="Robot" width="100" height="100">
+        <h1 class="display-5 fw-bold">Max le vieux sage</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Utiliser ce formulaire pour tester l'IA de ChatGPT.</p>
+        </div>
+
+        <div class="example-wrapper">
+            {{ form_start(form) }}
+            {{ form_row(form.question) }}
+            {{ form_row(form.submit, {
+                label_html: true,
+                label: 'Send your request <img class="htmx-indicator" src="/asset/img/bars.svg"/>',
+                attr: {
+                    class: 'btn btn-primary w-100'
+                }
+            }) }}
+            {{ form_end(form) }}
+        </div>
+        <div id="response"></div>
     </div>
-    <div id="response"></div>
 {% endblock %}

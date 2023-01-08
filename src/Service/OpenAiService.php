@@ -28,6 +28,9 @@ class OpenAiService
         $open_ai_key = $this->parameterBag->get('OPENAI_API_KEY');
         $open_ai = new OpenAi($open_ai_key);
 
+        sleep(2);
+        return 'bla bla bla...';
+
         $complete = $open_ai->completion([
             'model' => 'text-davinci-003',
             'prompt' => $question,

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html data-bs-theme="dark">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %} | Max le robot</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🤖️</text></svg>">
-        <link rel="stylesheet" href="{{ asset('asset/pico-master/css/pico.css') }}">
+        <title>{% block title %}{% endblock %} | Max le vieux sage</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🧙</text></svg>">
+        <link rel="stylesheet" href="{{ asset('asset/bootstrap/css/bootstrap.css') }}">
     </head>
     <body>
         <main class="container">
             {% block body %}{% endblock %}
             <hr>
-            <footer>
+            <footer class="text-">
                 &copy; {{ 'now' |date('Y') }} by Adrien DURMIER, propulsed by OpenAI
             </footer>
         </main>
+        <script src="{{ asset('asset/bootstrap/js/bootstrap.js') }}"></script>
         <script src="{{ asset('asset/js/htmx.min.js') }}"></script>
     </body>
 </html>
