@@ -14,7 +14,6 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(Request $request, OpenAiService $openAiService): Response
     {
-        // @see for disable ssl verification, else it always returns false: https://github.com/orhanerday/open-ai/issues/38
         $form = $this->createForm(ChatGptType::class);
         $form->handleRequest($request);
 
